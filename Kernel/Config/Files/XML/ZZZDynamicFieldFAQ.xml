@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="2.0" init="Config">
+        <Setting Name="Frontend::Module###AdminDynamicFieldFAQItem" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the agent interface.</Description>
+        <Navigation>Frontend::Admin::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Group">
+                        <Array>
+                            <Item>admin</Item>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1">This module is part of the admin area of OTRS.</Item>
+                    <Item Key="Title" Translatable="1">Dynamic Fields FAQ Item Backend GUI</Item>
+                    <Item Key="NavBarName"></Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="Loader::Module::AdminDynamicFieldFAQItem###002-Ticket" Required="0" Valid="1">
+        <Description Translatable="1">Loader module registration for the agent interface.</Description>
+        <Navigation>Frontend::Admin::ModuleRegistration::Loader</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="CSS">
+                    <Array>
+                        <Item>Core.Agent.Admin.DynamicField.css</Item>
+                    </Array>
+                </Item>
+                <Item Key="JavaScript">
+                    <Array>
+                        <Item>Core.Agent.Admin.DynamicField.js</Item>
+                        <Item>Core.Agent.Admin.DynamicFieldDropdown.js</Item>
+                        <Item>Core.Agent.Admin.SysConfig.Entity.js</Item>
+                    </Array>
+                </Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="DynamicFields::Driver###FAQItem" Required="0" Valid="1">
+        <Description Translatable="1">DynamicField backend registration.</Description>
+        <Navigation>Core::DynamicFields::DriverRegistration</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="DisplayName" Translatable="1">FAQ Item</Item>
+                <Item Key="Module">Kernel::System::DynamicField::Driver::FAQItem</Item>
+                <Item Key="ConfigDialog">AdminDynamicFieldFAQItem</Item>
+                <Item Key="ObjectType">Ticket</Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="Ticket::EventModulePost###999-DynamicFieldFAQLinkSet" Required="0" Valid="1">
+        <Description Translatable="1">Ticket event module that link ticket to the selected FAQ.</Description>
+        <Navigation>Core::Event::Ticket</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Module">Kernel::System::Ticket::Event::DynamicFieldFAQLinkSet</Item>
+                <Item Key="Transaction">0</Item>
+                <Item Key="Event">TicketDynamicFieldUpdate</Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Module###AJAXDynamicFieldFAQItem" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the agent interface.</Description>
+        <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1"></Item>
+                    <Item Key="NavBarName">Ticket</Item>
+                    <Item Key="Title" Translatable="1">DynamicFieldFAQItem</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="CustomerFrontend::Module###AJAXDynamicFieldFAQItem" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the customer interface.</Description>
+        <Navigation>Frontend::Customer::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1"></Item>
+                    <Item Key="NavBarName">Ticket</Item>
+                    <Item Key="Title" Translatable="1">DynamicFieldFAQItem</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="Loader::Agent::CommonCSS###20240721-DynamicFieldFAQItem" Required="0" Valid="1">
+        <Description Translatable="1">List of CSS files to always be loaded for the agent interface.</Description>
+        <Navigation>Frontend::Base::Loader</Navigation>
+        <Value>
+            <Array>
+                <Item>Core.Agent.DynamicFieldFAQItem.css</Item>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Loader::Customer::CommonCSS###20240721-DynamicFieldFAQItem" Required="0" Valid="1">
+        <Description Translatable="1">List of CSS files to always be loaded for the customer interface.</Description>
+        <Navigation>Frontend::Base::Loader</Navigation>
+        <Value>
+            <Array>
+                <Item>Core.Customer.DynamicFieldFAQItem.css</Item>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Loader::Agent::CommonJS###20240721-DynamicFieldFAQItem" Required="0" Valid="1">
+        <Description Translatable="1">List of JS files to always be loaded for the agent interface.</Description>
+        <Navigation>Frontend::Base::Loader</Navigation>
+        <Value>
+            <Array>
+                <Item>ZZZ.DynamicField.FAQItem.js</Item>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Loader::Customer::CommonJS###20240721-DynamicFieldFAQItem" Required="0" Valid="1">
+        <Description Translatable="1">List of JS files to always be loaded for the customer interface.</Description>
+        <Navigation>Frontend::Base::Loader</Navigation>
+        <Value>
+            <Array>
+                <Item>ZZZ.DynamicField.FAQItem.js</Item>
+            </Array>
+        </Value>
+    </Setting>
+</otrs_config>

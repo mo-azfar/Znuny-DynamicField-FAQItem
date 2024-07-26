@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_package version="1.0">
+    <Name>Znuny-DynamicField-FAQItem</Name>
+    <Version>7.0.1</Version>
+    <Framework>7.0.x</Framework>
+    <Vendor>mo-azfar</Vendor>
+    <URL>https://github.com/mo-azfar/Znuny-DynamicField-FAQItem/</URL>
+    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
+    <Description Lang="en">Populate list of FAQ in dynamic field and link it to the ticket.</Description>
+    <ChangeLog Version="7.0.1" Date="2024-07-27 00:00:01">New package.</ChangeLog>
+    <Filelist>
+        <File Permission="660" Location="Kernel/Config/Files/XML/ZZZDynamicFieldFAQ.xml"/>
+        <File Permission="660" Location="Kernel/Modules/AdminDynamicFieldFAQItem.pm"/>
+        <File Permission="660" Location="Kernel/Modules/AJAXDynamicFieldFAQItem.pm"/>
+        <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AdminDynamicFieldFAQItem.tt"/>
+        <File Permission="660" Location="Kernel/System/DynamicField/Driver/FAQItem.pm"/>
+        <File Permission="660" Location="Kernel/System/Ticket/Event/DynamicFieldFAQLinkSet.pm"/>
+        <File Permission="660" Location="var/httpd/htdocs/js/ZZZ.DynamicField.FAQItem.js"/>
+        <File Permission="660" Location="var/httpd/htdocs/skins/Agent/default/css/Core.Agent.DynamicFieldFAQItem.css"/>
+        <File Permission="660" Location="var/httpd/htdocs/skins/Customer/default/css/Core.Customer.DynamicFieldFAQItem.css"/>
+    </Filelist>
+    <IntroInstall Lang="en" Title="Install Information" Type="pre"><![CDATA[
+        <br/>
+        <b>WELCOME</b>
+        <br/>
+        <br/>
+        You are about to install the package Znuny-DynamicField-FAQItem. Check <a href='https://github.com/mo-azfar/Znuny-DynamicField-FAQItem/' target='_blank'/>README</a><br/>
+        <br/><br/>
+        ((enjoy))<br/>
+        <br/>
+    ]]></IntroInstall>
+    <IntroUpgrade Lang="en" Title="Upgrade Information" Type="pre"><![CDATA[
+        <br/>
+        Changelog<br/>
+        7.0.1 - New package.<br/>
+        <br/>
+        <br/><br/>
+        ((enjoy))<br/>
+        <br/>
+    ]]></IntroUpgrade>
+</otrs_package>
